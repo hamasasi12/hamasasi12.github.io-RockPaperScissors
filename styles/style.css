@@ -4,14 +4,32 @@ body {
   font-family: "Press Start 2P";
 }
 
-.container {
+.headerContainer {
   display: flex;
   background-color: #111720;
   color: chocolate;
   justify-content: center;
   box-sizing: border-box;
   padding: 20px 0px;
-  
+}
+
+.rpsHeader {
+  display: inline-block;
+  border-right: 5px solid;
+  width: 645px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation:
+          typing 3.5s steps(20),
+          cursor .5s step-end infinite ;
+}
+
+@keyframes cursor {
+  50% {border-color: transparent;}
+}
+
+@keyframes typing {
+  from {width: 0;}
 }
 
 .main-container {
