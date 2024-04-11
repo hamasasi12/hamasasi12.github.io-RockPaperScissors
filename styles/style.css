@@ -1,0 +1,110 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Press Start 2P";
+}
+
+.container {
+  display: flex;
+  background-color: #111720;
+  color: chocolate;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 20px 0px;
+  
+}
+
+.main-container {
+  display: flex;
+  background-color: #292d32;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+.winLose {
+  color: red;
+  font-family: system-ui;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+
+.rps {
+  color: antiquewhite;
+  font-family: system-ui;
+  font-size: 35px;
+  font-weight: bold;
+  margin: 0px;
+}
+
+.score-container {
+  font-family: system-ui;
+  color: antiquewhite;
+}
+
+.fist {
+  display: flex;
+  justify-content: center;
+  font-size: 120px;
+}
+
+#fist-left {
+  margin: 0px 20px;
+}
+
+#fist-right {
+  margin: 0px 20px;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+}
+
+#player-score {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0px 60px;
+}
+
+#computer-score {
+  margin: 0px 60px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; 
+}
+
+.buttons :hover {
+  transition: 0.1s;
+  background-color: chocolate;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.buttons :active {
+  background-color: red;
+}
+
+.Button {
+  margin-top: 40px;
+  border-radius: 10px;
+  width: 160px;
+  height: 160px;
+  border-style: none;
+  background-color: antiquewhite;
+}
+
+.icon {
+  font-size: 100px;
+}

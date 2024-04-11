@@ -3,20 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <title>&#x1F44B;Rock Paper Scissors</title>
 </head>
 <body>
   <!-- header start -->
   <header>
-    <h1 class="wrapper">hamas akif sanie</h1>
+    <div class="container">
+      <h1>Rock Paper Scissors</h1>
+    </div>
   </header>
   <!-- header end -->
 
   <!-- main start -->
   <main>
-    <div class="wrapper">
-      <h2>hamas akif sanie</h2>
+    <div class="main-container">
+      <p class="winLose">You Won!</p>
+      <p class="rps">Rock Beat Paper</p>
+
+      <div class="score-container">
+        <!-- fist -->
+        <div class="fist">
+          <div id="fist-left">&#x270A;</div>
+        <div id="fist-right">&#x270A;</div>
+        </div>
+
+        <!-- score -->
+        <div class="score">
+          <p id="player-score">Player: 1</p>
+          <p id="computer-score">Computer: 1</p>
+        </div>
+        
+        <div class="buttons">
+          <!-- rock -->
+          <button class="Button">
+            <div class="icon">&#x270A;</div>
+          </button>
+          <!-- paper -->
+          <button class="Button">
+            <div class="icon">&#x270B;</div>
+          </button>
+          <!-- scissor -->
+          <button class="Button">
+            <div class="icon">✌</div>
+          </button>
+        </div>
+      </div>
     </div>
   </main>
   <!-- main end -->
@@ -25,6 +60,6 @@
   <footer></footer>
   <!-- footer end -->
 
-  <script src="script.js"></script>
+  <script src="./js/script.js" defer></script>
 </body>
 </html>
