@@ -13,7 +13,7 @@
   <!-- header start -->
   <header>
     <div class="headerContainer">
-      <h1 class="rpsHeader">Rock Paper Scissors</h1>
+      <h1 class="rpsHeader">Rock Paper Scissors.</h1>
     </div>
   </header>
   <!-- header end -->
@@ -21,38 +21,41 @@
   <!-- main start -->
   <main>
     <div class="main-container">
-      <p class="winLose">You Won!</p>
-      <p class="rps">Rock Beat Paper</p>
+      <button class="ButtonStart" id="startButton">start</button>
+      <p class="winLose">Start The Game</p>
+      <p class="rps">Rock Paper Scissors</p>
 
       <div class="score-container">
         <!-- fist -->
         <div class="fist">
-          <div id="fist-left">&#x270A;</div>
-        <div id="fist-right">&#x270A;</div>
+          <div id="fist-left">❔</div>
+        <div id="fist-right">❔</div>
         </div>
 
         <!-- score -->
         <div class="score">
-          <p id="player-score">Player: 1</p>
-          <p id="computer-score">Computer: 1</p>
+          <p id="player-score">Player: 0</p>
+          <p id="computer-score">Computer: 0</p>
         </div>
         
         <div class="buttons">
           <!-- rock -->
           <button class="Button">
-            <div class="icon">&#x270A;</div>
+            <div class="icon" id="rockButton">✊</div>
           </button>
           <!-- paper -->
           <button class="Button">
-            <div class="icon">&#x270B;</div>
+            <div class="icon" id="paperButton">✋</div>
           </button>
           <!-- scissor -->
           <button class="Button">
-            <div class="icon">✌</div>
+            <div class="icon" id="scissorButton">✌</div>
           </button>
         </div>
       </div>
+      <button class="restart-button">Restart</button>
     </div>
+    <button id="startButtons">Start</button>
   </main>
   <!-- main end -->
 

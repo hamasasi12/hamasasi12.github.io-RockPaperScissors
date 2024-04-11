@@ -121,8 +121,121 @@ body {
   height: 160px;
   border-style: none;
   background-color: antiquewhite;
+  transition: opacity 1s ease, display 1s ease;
 }
 
 .icon {
   font-size: 100px;
+}
+
+.restart-button {
+  color: antiquewhite;
+  margin-top: 40px;
+  font-family: system-ui;
+  font-size: 40px;
+  font-weight: bold;
+  display: inline-block;
+  flex-direction: row;
+  background-color:chocolate;
+  border-style: none;
+  border-radius: 5px;
+  width:200px;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.restart-button :hover {
+  transition: 0.1s;
+  color: red;
+}
+
+#startButton {
+  transition: opacity 1s ease, display 10s ease; /* Add transition for opacity and display */
+  
+}
+
+.hidden {
+  transition: 3s;
+  opacity: 0; /* Set opacity to 0 to make it disappear */
+  animation: marginAnimation 2s ease-in-out infinite;
+}
+
+@keyframes marginAnimation {
+  0% {
+    margin: 0;
+  }
+  50% {
+    margin: 50px;
+  }
+  100% {
+    margin: 0;
+  }
+}
+
+@keyframes disappears {
+  0% {
+    margin-top: -10px;
+  }
+  50% {
+    margin-top: -20px;
+  }
+  100% {
+    margin-top: -40px;
+    display: none;
+  }
+}
+.disappear {
+  transition: 3s;
+  display: none;
+  animation: disappears 2s ease-in-out ;
+}
+.display-none {
+  opacity: 0;
+  display: none;
+}
+
+.ButtonStart {
+  margin-top: 30px;
+  background-color: antiquewhite;
+  width: 160px;
+  height: 120px;
+  font-family: "Press Start 2P";
+  font-size: 25px;
+  font-weight: bold;
+  color: chocolate;
+  animation: blinkk .5s step-end infinite;
+  border-radius: 15px;
+  border-style: none;
+}
+
+@keyframes blinkk {
+  50% {color: red;}
+}
+
+@keyframes blinkkk {
+  0% { color: chocolate; transition: 0.25s; }
+  25% { color: rgb(210, 123, 30); transition: 0.25s; }
+  50% { color: rgb(210, 87, 30);transition: 0.25s; }
+  75% { color: rgb(210, 57, 30);transition: 0.25s; }
+  100% { color: red;transition: 0.25s; }
+}
+
+.blinkGameStart {
+  animation: blinkkk 1s step-end infinite;
+}
+
+@keyframes fadeInOut {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+.fade-in-out {
+  animation: fadeInOut 1.5s ease-in-out infinite;
 }
