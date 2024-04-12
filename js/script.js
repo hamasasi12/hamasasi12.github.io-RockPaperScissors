@@ -2,8 +2,8 @@ const winLose = document.querySelector('.winLose')
 const rps = document.querySelector('.rps')
 const fistLeft = document.querySelector('#fist-left')
 const fistRight = document.querySelector('#fist-right')
-const playerScore = document.querySelector('#player-score')
-const computerScore = document.querySelector('#computer-score')
+const playerScoree = document.querySelector('#player-score')
+const computerScoree = document.querySelector('#computer-score')
 const rockButton = document.querySelector('#rockButton')
 const paperButton = document.querySelector('#paperButton')
 const scissorButton = document.querySelector('#scissorButton')
@@ -12,9 +12,9 @@ const startButtons = document.querySelector('#startButtons')
 const startButton = document.querySelector('#startButton')
 
 // make start button disappear
-startButton.addEventListener("click",() => {
-    startButtons.classList.add('display-none')
-})
+// startButton.addEventListener("click",() => {
+//     startButtons.classList.add('display-none')
+// })
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -39,4 +39,70 @@ startButton.addEventListener('click', async function () {
 restartButton.addEventListener("click",() => {
     location.reload()
 })
+
+//game
+let playerScores = 0
+let computerScores = 0
+let roundWin = ''
+
+//random computer choises
+function getComputerChoises() {
+    let getComputerChoises = ['rock','paper','scissor']
+    const randomNumber = Math.floor(Math.random() * 3)
+    return getComputerChoises[randomNumber]
+}
+
+//the main brain
+function playerscoreStorage(Humaschoises) {
+    const computer = getComputerChoises()
+    if (Humaschoises === computer) {
+        roundWin = 'tie'
+        rps.textContent = "Draw!"
+    }
+    if (
+        (Humaschoises === 'rock' && computer === 'scissor') ||
+        (Humaschoises === 'scissor' && computer === 'paper') ||
+        (Humaschoises === 'paper' && computer === 'rock')
+    ) {
+        playerScores ++
+        console.log("playerscore:",playerScores)
+    }
+    if (
+        (computer === 'rock' && Humaschoises === 'scissor') ||
+        (computer === 'scissor' && Humaschoises === 'paper') ||
+        (computer === 'paper' && Humaschoises === 'rock')
+    ) {
+        computerScores ++
+        console.log("computer score:",computerScores)
+    }
+    if (playerScores === 5 || computerScores === 5) {
+        location.reload()
+    }
+    updateScore()
+}
+//get human choises
+function mainGame() {
+    rockButton.addEventListener('click',() => {
+        playerscoreStorage('rock')
+    })
+    
+    scissorButton.addEventListener('click',() => {
+        playerscoreStorage('scissor')
+    })
+    
+    paperButton.addEventListener('click',() => {
+        playerscoreStorage('paper')
+    })
+}
+mainGame()
+
+function updateScore() {
+    playerScoree.textContent = `Player: ${playerScores}`
+    computerScoree.textContent = `Player: ${computerScores}`
+}
+
+
+
+
+
 

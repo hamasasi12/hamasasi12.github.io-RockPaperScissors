@@ -145,7 +145,6 @@ body {
 }
 
 .restart-button :hover {
-  transition: 0.1s;
   color: red;
 }
 
@@ -238,4 +237,19 @@ body {
 
 .fade-in-out {
   animation: fadeInOut 1.5s ease-in-out infinite;
+}
+
+.footer-container {
+  width: 100%;
+  margin-top: 0px;
+  height: 100px;
+  background-color: #292d32;
+  font-family: system-ui;
+}
+
+.footer-text {
+  display: flex;
+  color: red;
+  font-family: system-ui;
+  justify-content: center;
 }
