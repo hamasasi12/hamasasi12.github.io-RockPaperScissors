@@ -52,20 +52,33 @@ function getComputerChoises() {
     return getComputerChoises[randomNumber]
 }
 
+
+function asdasd (computerChoise) {
+    const test = computerChoise
+    if (test === 'rock') {
+        fistRight.textContent = "✊"
+        console.log("computer batu")
+    }
+    if (test === 'scissor') {
+        fistRight.textContent = "✌"
+        console.log("computer gunting")
+    }
+    if (test === 'paper') {
+        fistRight.textContent = "✋"
+        console.log("computer kertas")
+    }
+}
 //the main brain
 function playerscoreStorage(Humaschoises) {
     const computer = getComputerChoises()
-    if (Humaschoises === computer) {
-        roundWin = 'tie'
-        rps.textContent = "Draw!"
-    }
+    asdasd(computer)
     if (
         (Humaschoises === 'rock' && computer === 'scissor') ||
         (Humaschoises === 'scissor' && computer === 'paper') ||
         (Humaschoises === 'paper' && computer === 'rock')
     ) {
         playerScores ++
-        console.log("playerscore:",playerScores)
+        rps.textContent = "You Win!"
     }
     if (
         (computer === 'rock' && Humaschoises === 'scissor') ||
@@ -73,36 +86,45 @@ function playerscoreStorage(Humaschoises) {
         (computer === 'paper' && Humaschoises === 'rock')
     ) {
         computerScores ++
-        console.log("computer score:",computerScores)
+        rps.textContent = "Computer Win!"
     }
     if (playerScores === 5 || computerScores === 5) {
         location.reload()
     }
+    if (Humaschoises === computer) {
+        roundWin = 'tie'
+        rps.textContent = "Draw!"
+    }
     updateScore()
+
 }
 //get human choises
 function mainGame() {
     rockButton.addEventListener('click',() => {
         playerscoreStorage('rock')
+        fistLeft.textContent = "✊"
     })
     
     scissorButton.addEventListener('click',() => {
         playerscoreStorage('scissor')
+        fistLeft.textContent = "✌"
     })
     
     paperButton.addEventListener('click',() => {
         playerscoreStorage('paper')
+        fistLeft.textContent = "✋"
     })
 }
 mainGame()
 
 function updateScore() {
     playerScoree.textContent = `Player: ${playerScores}`
-    computerScoree.textContent = `Player: ${computerScores}`
+    computerScoree.textContent = `Computer: ${computerScores}`
 }
 
+let bleep = new Audio()
+bleep.src = "./asset/1.wav"
 
-
-
-
+let bleepGame = new Audio()
+bleepGame.src = "./asset/soundGame.mp3"
 

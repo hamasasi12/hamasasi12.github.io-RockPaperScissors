@@ -21,7 +21,7 @@
   <!-- main start -->
   <main>
     <div class="main-container">
-      <button class="ButtonStart" id="startButton">start</button>
+      <button class="ButtonStart" id="startButton" onmousedown="bleepGame.play()">start</button>
       <p class="winLose">Start The Game</p>
       <p class="rps">Rock Paper Scissors</p>
 
@@ -41,19 +41,20 @@
         <div class="buttons">
           <!-- rock -->
           <button class="Button">
-            <div class="icon" id="rockButton">✊</div>
+            <div class="icon" id="rockButton" onmousedown="bleep.play()">✊</div>
           </button>
           <!-- paper -->
           <button class="Button">
-            <div class="icon" id="paperButton">✋</div>
+            <div class="icon" id="paperButton" onmousedown="bleep.play()">✋</div>
           </button>
           <!-- scissor -->
           <button class="Button">
-            <div class="icon" id="scissorButton">✌</div>
+            <div class="icon" id="scissorButton" onmousedown="bleep.play()">✌</div>
           </button>
         </div>
       </div>
       <button class="restart-button">Restart</button>
+      <button onmousedown="bleep.play()">testing</button>
     </div>
   </main>
   <!-- main end -->
