@@ -11,11 +11,6 @@ const restartButton = document.querySelector('.restart-button')
 const startButtons = document.querySelector('#startButtons')
 const startButton = document.querySelector('#startButton')
 
-// make start button disappear
-// startButton.addEventListener("click",() => {
-//     startButtons.classList.add('display-none')
-// })
-
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -36,7 +31,12 @@ startButton.addEventListener('click', async function () {
 })
 
 //restart button refresh
-restartButton.addEventListener("click",() => {
+let bleepRestartSound  = new Audio()
+bleepRestartSound.src = "./asset/restart.mp3"
+
+restartButton.addEventListener("click",async function() {
+    bleepRestartSound.play()
+    await sleep(1000)
     location.reload()
 })
 
@@ -136,19 +136,6 @@ bleep.src = "./asset/click.mp3"
 
 let bleepGame = new Audio()
 bleepGame.src = "./asset/soundGame.mp3"
-
-    // let bleepWinGame = new Audio()
-    // let bleepLoseGame = new Audio()
-
-    // bleepLoseGame.src = "./asset/lose.mp3"
-    // bleepWinGame.src = "./asset/win.mp3"
-
-    // if (playerScores === 5) {
-    //     bleepWinGame.play()
-    // }
-    // if (computerScores === 5) {
-    //     bleepLoseGame.play()
-    // }
 
 function startSound () {
     let bleepEndGame = new Audio()
