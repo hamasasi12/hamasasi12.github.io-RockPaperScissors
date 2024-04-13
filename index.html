@@ -12,8 +12,8 @@
 <body>
   <!-- header start -->
   <header>
-    <div class="container">
-      <h1>Rock Paper Scissors</h1>
+    <div class="headerContainer">
+      <h1 class="rpsHeader">Rock Paper Scissors.</h1>
     </div>
   </header>
   <!-- header end -->
@@ -21,43 +21,75 @@
   <!-- main start -->
   <main>
     <div class="main-container">
-      <p class="winLose">You Won!</p>
-      <p class="rps">Rock Beat Paper</p>
+      <button class="ButtonStart" 
+      id="startButton" 
+      onmousedown="bleepGame.play()">
+      Start</button>
+      <p class="winLose">Start The Game</p>
+      <p class="rps">Rock Paper Scissors</p>
 
       <div class="score-container">
         <!-- fist -->
         <div class="fist">
-          <div id="fist-left">&#x270A;</div>
-        <div id="fist-right">&#x270A;</div>
+          <div id="fist-left">❔</div>
+        <div id="fist-right">❔</div>
         </div>
 
         <!-- score -->
         <div class="score">
-          <p id="player-score">Player: 1</p>
-          <p id="computer-score">Computer: 1</p>
+          <p id="player-score">Player: 0</p>
+          <p id="computer-score">Computer: 0</p>
         </div>
         
         <div class="buttons">
           <!-- rock -->
           <button class="Button">
-            <div class="icon">&#x270A;</div>
+            <div class="icon" id="rockButton" onmousedown="bleep.play()">✊</div>
           </button>
           <!-- paper -->
           <button class="Button">
-            <div class="icon">&#x270B;</div>
+            <div class="icon" id="paperButton" onmousedown="bleep.play()">✋</div>
           </button>
           <!-- scissor -->
           <button class="Button">
-            <div class="icon">✌</div>
+            <div class="icon" id="scissorButton" onmousedown="bleep.play()">✌</div>
           </button>
         </div>
+      </div>
+      <button class="restart-button">Restart</button>
+      <div class="footer-img-container">
+        <ul class="ul-footer">
+          <li>
+            <a href="https://github.com/hamasasi12" target="_blank" rel="noopener">
+              <img src="./asset/img/github.png" alt="github" class="img-footer">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/hamaszz_/" target="_blank" rel="noopener">
+              <img src="./asset/img/instagram.png" alt="instagram" class="img-footer" >
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/hamas-akif-sanie-877479213/" target="_blank" rel="noopener">
+              <img src="./asset/img/linkedin.png" alt="linkedin" class="img-footer">
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </main>
   <!-- main end -->
 
   <!-- footer start -->
-  <footer></footer>
+  <footer>
+    <div class="footer-container">
+      <br>
+      <h2 class="footer-text">Copyright©
+        <script>document.write(new Date().getFullYear())</script>
+        HamasAkifSanie.
+      </h2>
+      </div>
+  </footer>
   <!-- footer end -->
 
   <script src="./js/script.js" defer></script>
