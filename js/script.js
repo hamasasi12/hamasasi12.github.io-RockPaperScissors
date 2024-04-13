@@ -89,14 +89,23 @@ function playerscoreStorage(Humaschoises) {
         rps.textContent = "Computer Win!"
     }
     if (playerScores === 5 || computerScores === 5) {
-        location.reload()
+        if (playerScores === 5 ) {
+            startWinSound ()
+            bleepGame.pause()
+        } else {
+            startLoseSound ()
+            bleepGame.pause()
+        }
+        removeButton()
+        setTimeout(function() {
+            location.reload();
+        }, 4000);
     }
     if (Humaschoises === computer) {
         roundWin = 'tie'
         rps.textContent = "Draw!"
     }
     updateScore()
-
 }
 //get human choises
 function mainGame() {
@@ -123,8 +132,43 @@ function updateScore() {
 }
 
 let bleep = new Audio()
-bleep.src = "./asset/1.wav"
+bleep.src = "./asset/click.mp3"
 
 let bleepGame = new Audio()
 bleepGame.src = "./asset/soundGame.mp3"
 
+    // let bleepWinGame = new Audio()
+    // let bleepLoseGame = new Audio()
+
+    // bleepLoseGame.src = "./asset/lose.mp3"
+    // bleepWinGame.src = "./asset/win.mp3"
+
+    // if (playerScores === 5) {
+    //     bleepWinGame.play()
+    // }
+    // if (computerScores === 5) {
+    //     bleepLoseGame.play()
+    // }
+
+function startSound () {
+    let bleepEndGame = new Audio()
+    bleepEndGame.src = "./asset/soundGame.mp3"
+}
+
+function removeButton () {
+    rockButton.remove()
+    scissorButton.remove()
+    paperButton.remove()
+}
+
+function startWinSound () {
+    let bleepWinGame = new Audio()
+    bleepWinGame.src = "./asset/win.mp3"
+    bleepWinGame.play()
+}
+
+function startLoseSound () {
+    let bleepLoseSound = new Audio() 
+    bleepLoseSound.src = "./asset/lose.mp3"
+    bleepLoseSound.play()
+}
